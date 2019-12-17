@@ -16,7 +16,7 @@ namespace SchoolTemplate.Controllers
     public IActionResult Index()
     {
       List<Product> products = new List<Product>();
-      // uncomment deze regel om producten uit je database toe te voegen
+      //// uncomment deze regel om producten uit je database toe te voegen
       // products = GetProducts();
 
       return View(products);
