@@ -6,20 +6,28 @@ using MySql.Data.MySqlClient;
 using SchoolTemplate.Database;
 using SchoolTemplate.Models;
 
+public IActionResult ShowAll()
+{
+    return View();
+}
+
 namespace SchoolTemplate.Controllers
 {
-  public class HomeController : Controller
-  {
-    // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
-    string connectionString = "Server=172.16.160.21;Port=3306;Database=110273;Uid=110273;Pwd=ACKpiCIr;";
-
+    public class HomeController : Controller
+    {
+        // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
+        string connectionString = "Server=172.16.160.21;Port=3306;Database=110273;Uid=110273;Pwd=ACKpiCIr;";
+    }
     public IActionResult Index()
    {
       List<Product> products = new List<Product>();
       //// uncomment deze regel om producten uit je database toe te voegen
       products = GetProducts();
 
-      return View(products);
+   
+            
+            
+            return View(products);
     }
 
     private List<Product> GetProducts()
