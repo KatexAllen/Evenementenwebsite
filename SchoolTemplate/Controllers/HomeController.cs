@@ -57,6 +57,7 @@ namespace SchoolTemplate.Controllers
             return View();
         }
 
+        [Route("show-all")]
         public IActionResult ShowAll()
         {
             return View();
