@@ -52,13 +52,20 @@ namespace SchoolTemplate.Controllers
             return products;
         }
 
-        public IActionResult Privacy()
+        [Route("Tickets")]
+        public IActionResult Tickets()
         {
             return View();
         }
 
-        [Route("show-all")]
-        public IActionResult ShowAll()
+        [Route("Contact")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [Route("Inloggen")]
+        public IActionResult Inloggen()
         {
             return View();
         }
