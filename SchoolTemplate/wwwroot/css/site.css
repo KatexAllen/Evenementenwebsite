@@ -1,12 +1,14 @@
 ﻿.main-nav a {
-    display: inline-block;
-    border-radius: 5px 5px 0px 0px;
-    border-bottom: 10px solid white;
-    background-color: rgba(255, 255, 255, 0.64);
-    color: black;
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: bottom 300ms ease;
-    position: relative;
-    bottom: 0px;
+    display: inline;
+    float: left;
+    display: block;
+    padding: 8px 173px;
+    background-color: #c0e7fbff;
+    text-decoration:none;
+    border-bottom: solid white;
+    border-top: solid white; 
+}
+
+body {
+    background-color: #FFF2CCFF;
 }

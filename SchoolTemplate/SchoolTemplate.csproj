@@ -17,4 +17,9 @@
     <Folder Include="Views\Home\NewFolder\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <None Include="wwwroot\afbeeldingen\logobullebak2.png" />
+  </ItemGroup>
+
 </Project>
