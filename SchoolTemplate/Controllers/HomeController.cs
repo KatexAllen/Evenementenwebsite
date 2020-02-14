@@ -70,6 +70,16 @@ namespace SchoolTemplate.Controllers
             return View();
         }
 
+        [Route("Festival/{id}")]
+        public IActionResult Festival(string id)
+        {
+            // haal festival op met nummertje {id}
+
+            ViewData["id"] = id;
+
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
