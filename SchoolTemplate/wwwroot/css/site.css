@@ -37,6 +37,11 @@ td {
     vertical-align: bottom;
 }
 
+h1 {
+    text-align: center;
+    vertical-align: baseline;
+}
+
 h2 {
     text-align: center;
 }
