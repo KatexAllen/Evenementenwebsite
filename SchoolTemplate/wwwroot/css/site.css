@@ -12,3 +12,13 @@
 body {
     background-color: #FFF2CCFF;
 }
+
+.afbeeldingen {
+    position: relative;
+}
+
+.over-img {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+}
