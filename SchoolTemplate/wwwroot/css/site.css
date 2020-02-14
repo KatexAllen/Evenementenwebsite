@@ -4,13 +4,14 @@
     display: block;
     padding: 8px 173px;
     background-color: #c0e7fbff;
-    text-decoration:none;
+    text-decoration: none;
     border-bottom: solid white;
-    border-top: solid white; 
+    border-top: solid white;
 }
 
 body {
     background-color: #FFF2CCFF;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .afbeeldingen {
