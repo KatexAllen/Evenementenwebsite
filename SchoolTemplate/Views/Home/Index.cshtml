@@ -1,34 +1,38 @@
 ﻿@using SchoolTemplate.Database;
-@model List<Product>
+@model List<Festival>
 @{
     ViewData["Title"] = "Home";
 }
 
 
-    <div class="page">
+<div class="page">
 
-        <nav class="main-nav">
-            <a href="/">Home</a>
-            <a href="/Tickets">Tickets</a>
-            <a href="/Contact">Contact</a>
-            <a href="/Inloggen">Inloggen</a>
-        </nav>
+    <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/Tickets">Tickets</a>
+        <a href="/Contact">Contact</a>
+        <a href="/Inloggen">Inloggen</a>
+    </nav>
 
+    @foreach(Festival p in Model)
+    {
+        <p>@p.Naam en @p.Calorieen</p>
+    }
 
-        <div class="text-center">
-            <h1 class="display-4">Welcome</h1>
-            <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-        </div>
-
-        <p> Koop nu tickets voor het eerstvolgende festival: de Feesttent </p>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     </div>
+
+    <p> Koop nu tickets voor het eerstvolgende festival: de Feesttent </p>
+</div>
 
 
 <div class="afbeeldingen">
     <img src="/afbeeldingen/logobullebak2.png" alt="logo" width="100" height="200" class="over-img" />
 
     <img src="/afbeeldingen/afbeeldingfestivalbullebak.png" alt="festival" width="1440" height="600" />
-</div> 
+</div>
 
 <h2>Eerstvolgende festivals:</h2>
 

@@ -15,11 +15,7 @@ namespace SchoolTemplate.Controllers
         string connectionString = "Server=172.16.160.21;Port=3306;Database=110273;Uid=110273;Pwd=ACKpiCIr;";
         public IActionResult Index()
         {
-            List<Product> products = new List<Product>();
-            // uncomment deze regel om producten uit je database toe te voegen
-            // products = GetProducts();
-
-            return View(products);
+            return View(GetFestivals());
         }
 
         private List<Product> GetProducts()
@@ -50,6 +46,32 @@ namespace SchoolTemplate.Controllers
             }
 
             return products;
+        }
+
+        private List<Festival> GetFestivals()
+        {
+            List<Festival> Festival = new List<Festival>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from Festival", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Festival p = new Festival
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString()
+                        };
+                        Festival.Add(p);
+                    }
+                }
+            }
+
+            return Festival;
         }
 
         [Route("Tickets")]
