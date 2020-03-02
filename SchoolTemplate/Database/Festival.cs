@@ -15,3 +15,4 @@ namespace SchoolTemplate.Database
 
     }
 }
+
