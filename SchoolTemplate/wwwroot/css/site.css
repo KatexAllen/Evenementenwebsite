@@ -1,12 +1,10 @@
 ﻿.main-nav a {
-    display: inline;
-    float: left;
+    display: inline-block;
     display: block;
     padding: 8px 173px;
     background-color: #c0e7fbff;
     text-decoration: none;
-    border-bottom: solid white;
-    border-top: solid white;
+    border: 2px solid white;
     color: black;
 }
 
