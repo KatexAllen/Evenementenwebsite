@@ -1,11 +1,9 @@
 ﻿.main-nav a {
     display: inline-block;
-    display: block;
-    padding: 8px 173px;
-    background-color: #c0e7fbff;
+    padding: 8px 8px;
     text-decoration: none;
-    border: 2px solid white;
     color: black;
+    width: 13%;
 }
 
 body {
