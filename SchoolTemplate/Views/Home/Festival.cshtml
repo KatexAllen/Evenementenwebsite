@@ -10,3 +10,7 @@
 }
 <h1>Nadere info [@ViewData["id"]] </h1>
 
+@foreach (Festival p in Model)
+{
+    <p>@p.Naam en @p.Beschrijving</p>
+}

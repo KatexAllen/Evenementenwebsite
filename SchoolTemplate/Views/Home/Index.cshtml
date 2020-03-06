@@ -5,56 +5,46 @@
 }
 
 
-<div class="page">
+    <div class="page">
 
-    <nav class="main-nav">
-        <a href="/">Home</a>
-        <a href="/Tickets">Tickets</a>
-        <a href="/Contact">Contact</a>
-        <a href="/Inloggen">Inloggen</a>
-    </nav>
-
-    @foreach(Festival p in Model)
-    {
-        <p>@p.Naam en @p.Beschrijving</p>
-    }
-
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <nav class="main-nav">
+            <a href="/">Home</a>
+            <a href="/Tickets">Tickets</a>
+            <a href="/Contact">Contact</a>
+            <a href="/Inloggen">Inloggen</a>
+        </nav>
     </div>
 
-    <p> Koop nu tickets voor het eerstvolgende festival: de Feesttent </p>
-</div>
+            <div class="text-center">
+                <h1 class="display-4">Koop nu tickets voor het eerstvolgende festival: de Feesttent </h1>
+            </div>
+        
+            <div class="afbeelding">
+                <img src="/afbeeldingen/logobullebak2.png" alt="logo" width="200" height="250" class="over-img" />
+                <img src="/afbeeldingen/afbeeldingfestivalbullebak.png" alt="festival" width="1600" height="500" />
+            </div>
 
+        <h2>Eerstvolgende festivals:</h2>
 
-<div class="afbeeldingen">
-    <img src="/afbeeldingen/logobullebak2.png" alt="logo" width="100" height="200" class="over-img" />
-
-    <img src="/afbeeldingen/afbeeldingfestivalbullebak.png" alt="festival" width="1440" height="600" />
-</div>
-
-<h2>Eerstvolgende festivals:</h2>
-
-<table style="width:100%">
-    <tr>
-        <td>5 & 6 oktober</td>
-        <td><a href="/festival/1">De Feesttent</a></td>
-    </tr>
-    <tr>
-        <td>11, 12, & 13 oktober</td>
-        <td><a href="/festival/2">Hockeyloverz</a></td>
-    </tr>
-    <tr>
-        <td>25 & 26 oktober</td>
-        <td><a href="/festival/3">Koning festival</a></td>
-    </tr>
-    <tr>
-        <td>29 & 30 oktober</td>
-        <td><a href="/festival/4">Wiskunde liefhebbers</a></td>
-    </tr>
-    <tr>
-        <td>8 november</td>
-        <td><a href="/festival/5">Motorbende hieroo</a></td>
-    </tr>
-</table>
+        <table style="width:100%">
+            <tr>
+                <td>5 & 6 oktober</td>
+                <td><a href="/festival/1">De Feesttent</a></td>
+            </tr>
+            <tr>
+                <td>11, 12, & 13 oktober</td>
+                <td><a href="/festival/2">Hockeyloverz</a></td>
+            </tr>
+            <tr>
+                <td>25 & 26 oktober</td>
+                <td><a href="/festival/3">Koning festival</a></td>
+            </tr>
+            <tr>
+                <td>29 & 30 oktober</td>
+                <td><a href="/festival/4">Wiskunde liefhebbers</a></td>
+            </tr>
+            <tr>
+                <td>8 november</td>
+                <td><a href="/festival/5">Motorbende hieroo</a></td>
+            </tr>
+        </table>
