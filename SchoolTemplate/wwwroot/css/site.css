@@ -46,3 +46,9 @@ h2 {
 p20 {
     text-decoration: underline;
 }
+
+div.afbeelding3 {
+    position: relative;
+    left: 500px;
+    bottom: 65px; 
+}
