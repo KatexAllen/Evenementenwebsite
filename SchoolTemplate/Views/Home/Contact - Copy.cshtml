@@ -1,13 +1,12 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Muntverkoop";
+}
+
     <nav class="main-nav" style="background-color: #c0e7fbff; border: 2px solid white;">
         <a href="/">Home</a>
         <a href="/Tickets">Tickets</a>
         <a href="/Contact">Contact</a>
-        <a href="/Inloggen" style=" position: absolute; right: 10px; text-decoration: underline;">Inloggen</a>
+        <a href="/Inloggen" style=" position: absolute; right: 10px;"> Inloggen</a>
     </nav>
 
-
-@{
-    ViewData["Title"] = "Tickets";
-}
-<h1>Inloggen</h1>
+<h1>@ViewData["Title"]</h1>
