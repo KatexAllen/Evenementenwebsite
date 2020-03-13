@@ -2,11 +2,35 @@
     ViewData["Title"] = "Contact";
 }
 
-    <nav class="main-nav" style="background-color: #c0e7fbff; border: 2px solid white;">
-        <a href="/">Home</a>
-        <a href="/Tickets">Tickets</a>
-        <a href="/Contact" style="text-decoration: underline;">Contact</a>
-        <a href="/Inloggen" style=" position: absolute; right: 10px;"> Inloggen</a>
-    </nav>
+<nav class="main-nav" style="background-color: #c0e7fbff; border: 2px solid white;">
+    <a href="/">Home</a>
+    <a href="/Tickets">Tickets</a>
+    <a href="/Contact" style="text-decoration: underline;">Contact</a>
+    <a href="/Inloggen" style=" position: absolute; right: 10px;"> Inloggen</a>
+</nav>
 
 <h1>@ViewData["Title"]</h1>
+
+<center>
+    <p8>
+        Heb je nog vragen? Of wil je graag bij ons werken?
+        Vul dan hieronder je gegevens en vraag in. Dan zullen wij zo snel mogelijk reageren!
+    </p8>
+</center>
+
+<form>
+    <fieldset style="background-color: #FFE6F1FF">
+        </legend>
+        <br>Voornaam:<input type="text" pattern="[A-Za-z]{3,}" title="minimaal drie letters en geen cijfers" style="background-color:#FFFFFF">
+        <br>Achternaam:<input type="text" pattern="[A-Za-z]" required style="background-color:#FFFFFF">
+        <br>Mailadres:<input type="text" required style="background-color:#FFFFFF">
+        <br>Bericht:<textarea name="message" style="width:200px; height:100px; required style=" background-color:#FFFFFF""></textarea>
+        <button type="button" onclick="alert('Uw bericht is verzonden')">Verstuur</button>
+    </fieldset>
+</form>
+
+<center>
+    <div class="afbeelding5">
+        <img src="/afbeeldingen/logobullebak2.png" alt="logo" width="400" height="450"/>
+    </div>
+</center>
