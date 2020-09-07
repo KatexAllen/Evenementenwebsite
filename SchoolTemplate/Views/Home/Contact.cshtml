@@ -18,11 +18,12 @@
     </p8>
 </center>
 
-<form>
+<form methond="post">
     <fieldset style="background-color: #FFE6F1FF">
         </legend>
         <br>Voornaam:<input type="text" pattern="[A-Za-z]{3,}" title="minimaal drie letters en geen cijfers" style="background-color:#FFFFFF">
         <br>Achternaam:<input type="text" pattern="[A-Za-z]" required style="background-color:#FFFFFF">
+        <br>Geboortedatum:<input type="datetime" required style="background-color:#FFFFFF">
         <br>Mailadres:<input type="text" required style="background-color:#FFFFFF">
         <br>Bericht:<textarea name="message" style="width:200px; height:100px; required style=" background-color:#FFFFFF""></textarea>
         <button type="button" onclick="alert('Uw bericht is verzonden')">Verstuur</button>

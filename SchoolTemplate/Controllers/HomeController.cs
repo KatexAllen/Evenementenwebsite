@@ -85,6 +85,13 @@ namespace SchoolTemplate.Controllers
         {
             return View();
         }
+       
+        [Route("contact")]
+        [HttpPost]
+        public IActionResult contact(string voornaam, string achternaam)
+        {
+            return View();
+        }
 
         [Route("Inloggen")]
         public IActionResult Inloggen()
