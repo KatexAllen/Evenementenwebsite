@@ -60,3 +60,9 @@ p11 {
 p17 {
     text-decoration: underline; 
 }
+
+div.afbeelding5 {
+    position: relative;
+    left: 500px;
+    top: 70px;
+}
