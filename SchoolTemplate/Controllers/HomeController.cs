@@ -93,6 +93,12 @@ namespace SchoolTemplate.Controllers
             return View();
         }
 
+        [Route("Muntverkoop")]
+        public IActionResult Muntverkoop()
+        {
+            return View();
+        }
+
         [Route("Inloggen")]
         public IActionResult Inloggen()
         {
