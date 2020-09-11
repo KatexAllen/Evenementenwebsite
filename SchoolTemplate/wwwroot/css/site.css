@@ -11,14 +11,14 @@ body {
     font-family: "Courier New", Courier, monospace;
 }
 
+
+
 .afbeelding {
     position: relative;
 }
 
 .over-img {
     position: absolute;
-    top: 80%;
-    left: 20%;
 }
 
 table {
