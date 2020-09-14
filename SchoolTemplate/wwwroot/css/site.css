@@ -67,3 +67,8 @@ div.afbeelding5 {
     position: relative;
     top: 70px;
 }
+
+div.afbeeldingrecensies {
+    position: relative; 
+    left: 1100px; 
+}
