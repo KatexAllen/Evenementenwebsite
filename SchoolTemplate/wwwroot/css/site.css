@@ -77,18 +77,25 @@ div.afbeeldingrecensies {
 }
 
 div.logo {
-    top: 70 px ;
-    width: 200 ; 
-    height="250" ; 
+    top: 70px;
+    width: 200px;
+    height: 250px;
+    width: 40%;
 }
 
 div.hoofdafbeelding {
-    top: 70 px;
-    width ="1600";
-    height ="500";
+    top: 70px;
+    width: 750px;
+    height: 300px;
+    right: 0px;
+    float: right;
 }
 
 div.logo2 {
     width: "200"; 
     height: "250";
+}
+
+h2 {
+    clear: both;
 }
