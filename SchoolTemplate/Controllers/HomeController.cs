@@ -35,9 +35,8 @@ namespace SchoolTemplate.Controllers
                         {
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString(),
-                            Calorieen = float.Parse(reader["calorieen"].ToString()),
-                            Formaat = reader["Formaat"].ToString(),
-                            Gewicht = Convert.ToInt32(reader["Gewicht"].ToString()),
+                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString()),
                             Prijs = Decimal.Parse(reader["Prijs"].ToString())
                         };
                         products.Add(p);
@@ -65,6 +64,9 @@ namespace SchoolTemplate.Controllers
                         {
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString()
+                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString()),
+                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
                         };
                         Festival.Add(p);
                     }

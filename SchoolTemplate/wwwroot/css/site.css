@@ -6,6 +6,11 @@
     width: 13%;
 }
 
+.main-nav {
+    background-color: #c0e7fbff;
+    border: 2px solid white;
+}
+
 body {
     background-color: #FFF2CCFF;
     font-family: "Courier New", Courier, monospace;
@@ -13,14 +18,12 @@ body {
 
 div.afbeelding-geld {
     left: 500px;
+    width: "300";
+    height: "250";
 }
 
 .afbeelding {
     position: relative;
-}
-
-.over-img {
-    position: absolute;
 }
 
 table {
@@ -77,11 +80,15 @@ div.logo {
     top: 70 px ;
     width: 200 ; 
     height="250" ; 
-    class="over-img" ; 
 }
 
 div.hoofdafbeelding {
-    top: 70 px ;
-    width ="1600" ; 
-    height="500" ; 
+    top: 70 px;
+    width ="1600";
+    height ="500";
+}
+
+div.logo2 {
+    width: "200"; 
+    height: "250";
 }

@@ -2,7 +2,7 @@
     ViewData["Title"] = "Contact";
 }
 
-<nav class="main-nav" style="background-color: #c0e7fbff; border: 2px solid white;">
+<nav class="main-nav">
     <a href="/">Home</a>
     <a href="/Tickets">Tickets</a>
     <a href="/Contact" style="text-decoration: underline;">Contact</a>
@@ -18,17 +18,16 @@
     </p8>
 </center>
 
-<form methond="post">
-    <fieldset style="background-color: #FFE6F1FF">
-        </legend>
-        <br>Voornaam:<input type="text" pattern="[A-Za-z]{3,}" title="minimaal drie letters en geen cijfers" style="background-color:#FFFFFF">
-        <br>Achternaam:<input type="text" pattern="[A-Za-z]" required style="background-color:#FFFFFF">
-        <br>Geboortedatum:<input type="datetime" required style="background-color:#FFFFFF">
-        <br>Mailadres:<input type="text" required style="background-color:#FFFFFF">
-        <br>Bericht:<textarea name="message" style="width:200px; height:100px; required style=" background-color:#FFFFFF""></textarea>
-        <button type="button" onclick="alert('Uw bericht is verzonden')">Verstuur</button>
-    </fieldset>
-</form>
+    <form methond="post">
+        <fieldset style="background-color:#FFE6F1FF">
+            <br>Voornaam:<input type="text" pattern="[A-Za-z]{3,}" title="minimaal drie letters en geen cijfers" style="background-color:#FFFFFF">
+            <br>Achternaam:<input type="text" pattern="[A-Za-z]" required style="background-color:#FFFFFF">
+            <br>Geboortedatum:<input type="datetime" required style="background-color:#FFFFFF">
+            <br>Mailadres:<input type="text" required style="background-color:#FFFFFF">
+            <br>Bericht:<textarea name="message" style="width:200px; height:100px; required style=" background-color:#FFFFFF""></textarea>
+            <button type="button" style="background-color: #FFFFFF" onclick="alert('Uw bericht is verzonden')">Verstuur</button>
+        </fieldset>
+    </form>
 
 <center>
     <div class="afbeelding5">
