@@ -63,7 +63,7 @@ namespace SchoolTemplate.Controllers
                         Festival p = new Festival
                         {
                             Id = Convert.ToInt32(reader["Id"]),
-                            Naam = reader["Naam"].ToString()
+                            Naam = reader["Naam"].ToString(),
                             Beschrijving = reader["Beschrijving"].ToString(),
                             Datum = DateTime.Parse(reader["Datum"].ToString()),
                             Prijs = Decimal.Parse(reader["Prijs"].ToString())

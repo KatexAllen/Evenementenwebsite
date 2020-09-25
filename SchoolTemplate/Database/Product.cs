@@ -18,6 +18,7 @@ namespace SchoolTemplate.Database
     public int Gewicht { get; set; }
 
     public float Calorieen { get; set; }
-
-  }
+        public string Beschrijving { get; internal set; }
+        public DateTime Datum { get; internal set; }
+    }
 }

@@ -12,6 +12,7 @@ namespace SchoolTemplate.Database
 
     public DateTime Datum { get; set; }
 
+    public Decimal Prijs { get; set; }
 
     }
 }
