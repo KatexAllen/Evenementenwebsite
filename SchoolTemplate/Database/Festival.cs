@@ -17,6 +17,8 @@ namespace SchoolTemplate.Database
     public string Huisregels { get; set; }
 
     public string Nieuws { get; set; }
-    }
+
+    public string Plattegrond { get; set; }
+    } 
 }
 
