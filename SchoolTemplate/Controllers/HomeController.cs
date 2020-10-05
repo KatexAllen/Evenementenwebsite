@@ -39,12 +39,12 @@ namespace SchoolTemplate.Controllers
                             Emailadres = reader["Emailadres"].ToString()),
                             Wachtwoord = reader["Wachtwoord"].ToString())
                         };
-                        klant.Add(p);
+                        Klant.Add(p);
                     }
                 }
             }
 
-            return klant;
+            return View(Getklant());
         }
 
         private List<Festival> GetFestivals()
