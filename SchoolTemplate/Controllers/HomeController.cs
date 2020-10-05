@@ -18,9 +18,9 @@ namespace SchoolTemplate.Controllers
             return View(GetFestivals());
         }
 
-        private List<Product> GetKlant()
+        private List<Klant> GetKlant()
         {
-            List<Product> products = new List<Product>();
+            List<Klant> products = new List<Klant>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -31,12 +31,12 @@ namespace SchoolTemplate.Controllers
                 {
                     while (reader.Read())
                     {
-                        Product p = new Product
+                        Klant p = new Klant
                         {
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString(),
                             Achternaam = reader["Achternaam"].ToString(),
-                            E-mailadres = reader["E-mailadres"].ToString()),
+                            Emailadres = reader["Emailadres"].ToString()),
                             Wachtwoord = reader["Wachtwoord"].ToString())
                         };
                         klant.Add(p);
