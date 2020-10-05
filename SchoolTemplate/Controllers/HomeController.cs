@@ -64,8 +64,11 @@ namespace SchoolTemplate.Controllers
                         {
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString(),
-                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Routebeschrijving = reader["Routebeschrijving"].ToString(),
+                            Plattegrond = reader["Plattegrond"].ToString(),
                             Datum = DateTime.Parse(reader["Datum"].ToString()),
+                            Nieuws = reader["Nieuws"].ToString(),
+                            Huisregels = reader["Huisregels"].ToString(),
                             Prijs = Decimal.Parse(reader["Prijs"].ToString())
                         };
                         Festival.Add(p);

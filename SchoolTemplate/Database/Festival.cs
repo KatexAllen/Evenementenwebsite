@@ -8,12 +8,15 @@ namespace SchoolTemplate.Database
     
     public string Naam { get; set; }
 
-    public string Beschrijving { get; set; }    
+    public string Routebeschrijving { get; set; }    
 
     public DateTime Datum { get; set; }
 
     public Decimal Prijs { get; set; }
 
+    public string Huisregels { get; set; }
+
+    public string Nieuws { get; set; }
     }
 }
 
