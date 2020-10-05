@@ -18,14 +18,14 @@ namespace SchoolTemplate.Controllers
             return View(GetFestivals());
         }
 
-        private List<Product> GetProducts()
+        private List<Product> GetKlant()
         {
             List<Product> products = new List<Product>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from product", conn);
+                MySqlCommand cmd = new MySqlCommand("select * from klant", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -35,16 +35,16 @@ namespace SchoolTemplate.Controllers
                         {
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString(),
-                            Beschrijving = reader["Beschrijving"].ToString(),
-                            Datum = DateTime.Parse(reader["Datum"].ToString()),
-                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
+                            Achternaam = reader["Achternaam"].ToString(),
+                            E-mailadres = reader["E-mailadres"].ToString()),
+                            Wachtwoord = reader["Wachtwoord"].ToString())
                         };
-                        products.Add(p);
+                        klant.Add(p);
                     }
                 }
             }
 
-            return products;
+            return klant;
         }
 
         private List<Festival> GetFestivals()
