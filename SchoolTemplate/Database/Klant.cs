@@ -12,6 +12,8 @@ namespace SchoolTemplate.Database
 
    public string Emailadres { get; set; }
 
-   public string Wachtwoord { get; set; }
+   public DateTime Geboortedatum { get; set; }
+
+   public string Bericht { get; set; }
     }
 }

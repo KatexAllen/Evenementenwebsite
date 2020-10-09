@@ -24,12 +24,13 @@ namespace SchoolTemplate.Controllers
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(naam, achternaam, emailadres, wachtwoord) VALUES (?naam, ?achternaam, ?emailadres, ?wachtwoord)", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(naam, achternaam, emailadres, geboortedatum, bericht) VALUES (?naam, ?achternaam, ?emailadres, ?geboortedatum, ?bericht)", conn);
 
                 cmd.Parameters.Add("?naam", MySqlDbType.Text).Value = klant.Naam;
                 cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = klant.Achternaam;                
                 cmd.Parameters.Add("?emailadres", MySqlDbType.Text).Value = klant.Emailadres;
-                cmd.Parameters.Add("?wachtwoord", MySqlDbType.Text).Value = klant.Wachtwoord;
+                cmd.Parameters.Add("?geboortedatum", MySqlDbType.DateTime).Value = klant.Geboortedatum;
+                cmd.Parameters.Add("?bericht", MySqlDbType.Text).Value = klant.Bericht;
                 cmd.ExecuteNonQuery();
             }
         }
