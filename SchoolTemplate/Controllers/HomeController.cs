@@ -20,7 +20,7 @@ namespace SchoolTemplate.Controllers
 
         private List<Klant> GetKlant()
         {
-            List<Klant> products = new List<Klant>();
+            List<Klant> klanten = new List<Klant>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -36,14 +36,14 @@ namespace SchoolTemplate.Controllers
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString(),
                             Achternaam = reader["Achternaam"].ToString(),
-                            Emailadres = reader["Emailadres"].ToString()),
-                            Wachtwoord = reader["Wachtwoord"].ToString())
+                            Emailadres = reader["Emailadres"].ToString(),
+                            Wachtwoord = reader["Wachtwoord"].ToString()
                         };
-                        Klant.Add(p);
+                        klanten.Add(p);
                     }
                 }
             }
-            return Klant;
+            return klanten;
         }
 
         private List<Festival> GetFestivals()
@@ -89,7 +89,7 @@ namespace SchoolTemplate.Controllers
         {
             return View();
         }
-       
+
         [Route("contact")]
         [HttpPost]
         public IActionResult contact(string voornaam, string achternaam)
