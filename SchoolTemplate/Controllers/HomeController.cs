@@ -18,32 +18,20 @@ namespace SchoolTemplate.Controllers
             return View(GetFestivals());
         }
 
-        private List<Klant> GetKlant()
+        private void SaveKlant(Klant klant)
         {
-            List<Klant> klanten = new List<Klant>();
-
+           
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from klant", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(naam, achternaam, emailadres, wachtwoord) VALUES (?naam, ?achternaam, ?emailadres, ?wachtwoord)", conn);
 
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        Klant p = new Klant
-                        {
-                            Id = Convert.ToInt32(reader["Id"]),
-                            Naam = reader["Naam"].ToString(),
-                            Achternaam = reader["Achternaam"].ToString(),
-                            Emailadres = reader["Emailadres"].ToString(),
-                            Wachtwoord = reader["Wachtwoord"].ToString()
-                        };
-                        klanten.Add(p);
-                    }
-                }
+                cmd.Parameters.Add("?naam", MySqlDbType.Text).Value = klant.Naam;
+                cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = klant.Achternaam;                
+                cmd.Parameters.Add("?emailadres", MySqlDbType.Text).Value = klant.Emailadres;
+                cmd.Parameters.Add("?wachtwoord", MySqlDbType.Text).Value = klant.Wachtwoord;
+                cmd.ExecuteNonQuery();
             }
-            return klanten;
         }
 
         private List<Festival> GetFestivals()
@@ -85,8 +73,13 @@ namespace SchoolTemplate.Controllers
         }
 
         [Route("Contact")]
-        public IActionResult Contact()
+        [HttpPost]
+        public IActionResult Contact(Klant model)
         {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            SaveKlant(model);
             return View();
         }
 
