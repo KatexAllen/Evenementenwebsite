@@ -84,8 +84,7 @@ namespace SchoolTemplate.Controllers
         }
 
         [Route("contact")]
-        [HttpPost]
-        public IActionResult contact(string voornaam, string achternaam)
+        public IActionResult contact()
         {
             return View();
         }
