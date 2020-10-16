@@ -52,11 +52,7 @@ namespace SchoolTemplate.Controllers
                         {
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString(),
-                            Routebeschrijving = reader["Routebeschrijving"].ToString(),
-                            Plattegrond = reader["Plattegrond"].ToString(),
                             Datum = DateTime.Parse(reader["Datum"].ToString()),
-                            Nieuws = reader["Nieuws"].ToString(),
-                            Huisregels = reader["Huisregels"].ToString(),
                             Prijs = Decimal.Parse(reader["Prijs"].ToString())
                         };
                         Festival.Add(p);
@@ -102,14 +98,12 @@ namespace SchoolTemplate.Controllers
             return View();
         }
 
-        [Route("Festival/{id}")]
+        [Route("festival/{id}")]
         public IActionResult Festival(string id)
         {
-            // haal festival op met nummertje {id}
+            var model = GetFestivals(id);
 
-            ViewData["id"] = id;
-
-            return View();
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

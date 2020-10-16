@@ -7,12 +7,28 @@
     <a href="/Inloggen" style=" position: absolute; right: 10px;">Inloggen</a>
 </nav>
 
+@model SchoolTemplate.Database.Festival
 @{
     ViewData["Title"] = "Festival";
 }
-<h2>Nadere info [@ViewData["id"]] </h2>
+<h2>@Model.Naam</h2>
+<h3>Nadere info @Model.Naam </h3>
 
 @foreach (Festival p in Model)
 {
     <p>@p.Naam</p>
 }
+
+<h4>Plattegrond:</h4>
+<div class="plattegrond">
+    <img src="/afbeeldingen/afbeeldingfestivalbullebak.png" width=750px height=300px alt="festival" />
+</div>
+<h5>Routebeschrijving:</h5>
+<a href=" "
+<div class="nieuws">
+    <img src="/afbeeldingen/afbeeldingfestivalbullebak.png" width=750px height=300px alt="festival" />
+</div>
+    <div class="huisregels">
+    <img src="/afbeeldingen/afbeeldingfestivalbullebak.png" width=750px height=300px alt="festival" />
+</div>
+
