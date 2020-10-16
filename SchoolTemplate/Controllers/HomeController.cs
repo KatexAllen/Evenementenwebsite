@@ -52,11 +52,7 @@ namespace SchoolTemplate.Controllers
                         {
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString(),
-                            Routebeschrijving = reader["Routebeschrijving"].ToString(),
-                            Plattegrond = reader["Plattegrond"].ToString(),
                             Datum = DateTime.Parse(reader["Datum"].ToString()),
-                            Nieuws = reader["Nieuws"].ToString(),
-                            Huisregels = reader["Huisregels"].ToString(),
                             Prijs = Decimal.Parse(reader["Prijs"].ToString())
                         };
                         Festival.Add(p);
@@ -65,6 +61,34 @@ namespace SchoolTemplate.Controllers
             }
 
             return Festival;
+        }
+
+        private Festival GetFestival(string id)
+        {
+            List<Festival> festivals = new List<Festival>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from Festival", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Festival p = new Festival
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString()),
+                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
+                        };
+                        festivals.Add(p);
+                    }
+                }
+            }
+
+            return festivals[0];
         }
 
         [Route("Tickets")]
@@ -102,14 +126,12 @@ namespace SchoolTemplate.Controllers
             return View();
         }
 
-        [Route("Festival/{id}")]
+        [Route("festival/{id}")]
         public IActionResult Festival(string id)
         {
-            // haal festival op met nummertje {id}
+            var model = GetFestival(id);
 
-            ViewData["id"] = id;
-
-            return View();
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
