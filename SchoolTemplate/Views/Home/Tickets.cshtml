@@ -1,4 +1,6 @@
-﻿
+﻿@using SchoolTemplate.Database
+@model List<Festival>
+
 <nav class="main-nav">
     <a href="/">Home</a>
     <a href="/Tickets" style="text-decoration: underline;">Tickets</a>
@@ -11,51 +13,66 @@
     ViewData["Title"] = "Tickets";
 }
 
-<h1>Ticketverkoop:</h1>
 
-<fieldset style="background-color: #C0E7FBFF">
-    <p> De Feesttent - 5 & 6 oktober</p>
-    Locatie:Gemert
-</fieldset>
-
-<fieldset style="background-color: #C0E7FBFF">
-    <p>Ticketaantal: </p>
-    <SELECT name="number">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-    </SELECT>
-    <p>Prijs: € </p>
-</fieldset>
-
-
-<form>
+    <h1>Ticketverkoop:</h1>
     <fieldset style="background-color: #C0E7FBFF">
-        </legend>
-        <br>Voornaam <input type="text" pattern="[A-Za-z]{3,}" title="minimaal drie letters en geen cijfers" style="background-color:#C0E7FBFF">
-        <br>Achternaam <input type="text" required style="background-color:#C0E7FBFF">
-        <br>Adres <input type="text" required style="background-color:#C0E7FBFF">
-        <br>Plaats <input type="text" required style="background-color:#C0E7FBFF">
-        <br>Postcode <input type="text" required style="background-color:#C0E7FBFF">
-        <br>Telefoonnummer <input type="text" required style="background-color:#C0E7FBFF">
-        <br>Mailadres <input type="text" required style="background-color:#C0E7FBFF">
+        <select>
+            @foreach (Festival f in Model)
+            {
+                <option value="@f.Id">@f.Naam</option>
+            }
+        </select>
     </fieldset>
-</form>
+    <fieldset style="background-color: #C0E7FBFF">
+        <p>Ticketaantal: </p>
+        <SELECT name="number">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </SELECT>
+        <p>Prijs: €30</p>
+    </fieldset>
 
 
-<div>
-    <input type="checkbox" id="scales" name="scales"
-           checked>
-    <label for="scales">I confirm that I am 16 years of age or older, and I have read and agree to the <p20>Verkoopvoorwaarden</p20> en het <p20>Privacybeleid</p20>.</label>
-</div>
+    <form>
+        <fieldset style="background-color: #C0E7FBFF">
+            <br>Voornaam
+        </fieldset>
+    </form>
+    @*<input type = "text" pattern = "[A-Za-z]{3,}" title = "minimaal drie letters en geen cijfers" style = "background-color:#C0E7FBFF" >
 
-<p>Klik hier om uw bestelling te bevestigen:</p>
-<p>(u wordt doorgestuurd pax-online) </p>
+                          < br > Achternaam <input type = "text" required style = "background-color:#C0E7FBFF" >
 
-<div class="afbeelding3">
-    <a href="https://www.paypal.com/checkoutnow?token=EC-90S00416D0838500S&useraction=continue">
-        <img src="/afbeeldingen/afbeelding_ticketpagina.png" alt="ticketpagina" />
-    </a>
-</div>
+                                < br > Adres <input type = "text" required style = "background-color:#C0E7FBFF" >
+
+                                      < br > Plaats <input type = "text" required style = "background-color:#C0E7FBFF" >
+
+                                            < br > Postcode <input type = "text" required style = "background-color:#C0E7FBFF" >
+
+                                                  < br > Telefoonnummer <input type = "text" required style = "background-color:#C0E7FBFF" >
+
+                                                        < br > Mailadres <input type = "text" required style = "background-color:#C0E7FBFF" >
+
+                                                          </ fieldset >
+                                                      </ form >
+
+
+
+                                                      < div >
+
+                                                          < input type = "checkbox" id = "scales" name = "scales"
+                             checked>
+           < label for= "scales" > I confirm that I am 16 years of age or older, and I have read and agree to the < p20 > Verkoopvoorwaarden </ p20 > en het < p20 > Privacybeleid </ p20 >.</ label >
+        </ div >
+
+
+        < p > Klik hier om uw bestelling te bevestigen:</ p >
+        < p > (u wordt doorgestuurd pax - online) </p>*@
+
+    <div class="afbeelding3">
+        <a href="https://www.paypal.com/checkoutnow?token=EC-90S00416D0838500S&useraction=continue">
+            <img src="/afbeeldingen/afbeelding_ticketpagina.png" alt="ticketpagina" />
+        </a>
+    </div>

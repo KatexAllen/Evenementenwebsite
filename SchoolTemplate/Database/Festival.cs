@@ -12,6 +12,14 @@ namespace SchoolTemplate.Database
 
         public Decimal Prijs { get; set; }
 
+        public string Plattegrond { get; set; }
+
+        public string Routebeschrijving { get; set; }
+
+        public string Nieuws { get; set; }
+
+        public string Huisregels { get; set; }
+
     }
 }
 

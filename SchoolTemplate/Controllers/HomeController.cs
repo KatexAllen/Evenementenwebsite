@@ -70,7 +70,7 @@ namespace SchoolTemplate.Controllers
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from Festival", conn);
+                MySqlCommand cmd = new MySqlCommand($"select * from Festival where id = {id}", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -81,7 +81,11 @@ namespace SchoolTemplate.Controllers
                             Id = Convert.ToInt32(reader["Id"]),
                             Naam = reader["Naam"].ToString(),
                             Datum = DateTime.Parse(reader["Datum"].ToString()),
-                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
+                            Prijs = Decimal.Parse(reader["Prijs"].ToString()),
+                            Plattegrond = reader["Plattegrond"].ToString(),
+                            Routebeschrijving = reader["Routebeschrijving"].ToString(),
+                            Nieuws = reader["Nieuws"].ToString(),
+                            Huisregels = reader["Huisregels"].ToString()
                         };
                         festivals.Add(p);
                     }
@@ -94,7 +98,7 @@ namespace SchoolTemplate.Controllers
         [Route("Tickets")]
         public IActionResult Tickets()
         {
-            return View();
+            return View(GetFestivals());
         }
 
         [Route("Contact")]

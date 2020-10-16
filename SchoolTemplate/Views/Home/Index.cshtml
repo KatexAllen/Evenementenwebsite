@@ -33,7 +33,7 @@
     @foreach (Festival f in Model)
     {
         <tr>
-            <td>@f.Datum</td>
+            <td>@f.Datum.ToString("D")</td>
             <td><a href="/Festival/@f.Id">@f.Naam</a></td>
         </tr>
     }
