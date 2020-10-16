@@ -63,6 +63,34 @@ namespace SchoolTemplate.Controllers
             return Festival;
         }
 
+        private Festival GetFestival(string id)
+        {
+            List<Festival> festivals = new List<Festival>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from Festival", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Festival p = new Festival
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString()),
+                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
+                        };
+                        festivals.Add(p);
+                    }
+                }
+            }
+
+            return festivals[0];
+        }
+
         [Route("Tickets")]
         public IActionResult Tickets()
         {
@@ -101,7 +129,7 @@ namespace SchoolTemplate.Controllers
         [Route("festival/{id}")]
         public IActionResult Festival(string id)
         {
-            var model = GetFestivals(id);
+            var model = GetFestival(id);
 
             return View(model);
         }

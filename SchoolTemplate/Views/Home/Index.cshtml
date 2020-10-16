@@ -30,11 +30,15 @@
 <h2>Eerstvolgende festivals:</h2>
 
 <table style="width:100%">
-    <tr>
-        <td>5 & 6 oktober</td>
-        <td><a href="/Festival">De Feesttent</a></td>
-    </tr>
-    <tr>
+    @foreach (Festival f in Model)
+    {
+        <tr>
+            <td>@f.Datum</td>
+            <td><a href="/Festival/@f.Id">@f.Naam</a></td>
+        </tr>
+    }
+
+    @*<tr>
         <td>11, 12, & 13 oktober</td>
         <td><a href="/Festival">Hockeyloverz</a></td>
     </tr>
@@ -49,7 +53,7 @@
     <tr>
         <td>8 november</td>
         <td><a href="/Festival">Motorbende hieroo</a></td>
-    </tr>
+    </tr>*@
 </table>
 
 <div class="afbeelding4">
